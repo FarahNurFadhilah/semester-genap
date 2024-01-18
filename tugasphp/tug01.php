@@ -6,121 +6,128 @@
   </form>
 <?php 
   
-   echo "<br>";
+  if(isset($_GET["tanggal"]) && isset($_GET["bulan"])) {
 
-  $bulan=$_GET["bulan"];
-  $tanggal=$_GET["tanggal"];
-  
+  $tanggal =(int)$_GET["tanggal"];
+  $bulan = (int)$_GET["bulan"];
+
+  $zodiak = "belum ditentukan";
+  if($bulan >0 || $bulan <12 || $tanggal >0 || $tanggal <32){
+    $zodiak = "tanggal atau bulan tidak valid";
+  }
+ 
 
   if($bulan==1){
     if($tanggal>0 && $tanggal<18){
-        echo "Capicorn";
+        $zodiak = "Capicorn";
     }
     if ($tanggal>17 && $tanggal<31){
-        echo "Aquarius";
+        $zodiak = "Aquarius";
     }
   }
 
   if($bulan==2){
     if($tanggal>0 && $tanggal<17){
-      echo "Pisces";
+      $zodiak = "Pisces";
     }
     if($tanggal>16 && $tanggal<30){
-      echo "Aries";
+      $zodiak = "Aries";
     }
   }
 
   if($bulan==3){
     if($tanggal>0 && $tanggal<19){
-      echo "Taurus";
+      $zodiak = "Taurus";
     }
     if($tanggal>18 && $tanggal<29){
-      echo "Cancer";
+      $zodiak = "Cancer";
     }
   }
 
   if($bulan==4){
     if($tanggal>0 && $tanggal<17){
-      echo "Leo";
+      $zodiak = "Leo";
     }
     if($tanggal>16 && $tanggal<30){
-      echo "Virgo";
+      $zodiak = "Virgo";
     }
   }
 
   if($bulan==5){
     if($tanggal>0 && $tanggal<18){
-      echo "Libra";
+      $zodiak = "Libra";
     }
     if($tanggal>17 && $tanggal<31){
-      echo "Scorpio";
+      $zodiak = "Scorpio";
     }
   }
 
   if($bulan==6){
     if($tanggal>0 && $tanggal<16){
-      echo "Sagitarius";
+      $zodiak = "Sagitarius";
     }
     if($tanggal>15 && $tanggal<29){
-      echo "Januari";
+      $zodiak = "Januari";
     }
   }
 
   if($bulan==7){
     if($tanggal>0 && $tanggal<17){
-      echo "Februari";
+      $zodiak = "Februari";
     }
     if($tanggal>16 && $tanggal<30){
-      echo "Maret";
+      $zodiak = "Maret";
     }
   }
 
   if($bulan==8){
     if($tanggal>0 && $tanggal<16){
-      echo "April";
+      $zodiak = "April";
     }
     if($tanggal>15 && $tanggal<31){
-      echo "Mei";
+      $zodiak = "Mei";
     }
   }
 
   if($bulan==9){
     if($tanggal>0 && $tanggal<15){
-      echo "Juni";
+      $zodiak = "Juni";
     }
     if($tanggal>14 && $tanggal<30){
-      echo "Juli";
+      $zodiak = "Juli";
     }
   }
 
   if($bulan==10){
     if($tanggal>0 && $tanggal<16){
-      echo "Agustus";
+      $zodiak = "Agustus";
     }
     if($tanggal>15 && $tanggal<31){
-      echo "September";
+      $zodiak = "September";
     }
   }
 
   if($bulan==11){
     if($tanggal>0 && $tanggal<17){
-      echo "Oktober";
+      $zodiak = "Oktober";
     }
     if($tanggal>16 && $tanggal<32){
-      echo "November";
+      $zodiak = "November";
     }
   }
 
   if($bulan==12){
     if($tanggal>0 && $tanggal<18){
-      echo "Desember";
+      $zodiak = "Desember";
     }
     if($tanggal>17 && $tanggal<31){
-      echo "Muharram";
+      $zodiak = "Muharram";
     }
   }
 
+  echo $zodiak;
 
+}
 
 
 
