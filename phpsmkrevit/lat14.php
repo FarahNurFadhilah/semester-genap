@@ -5,16 +5,16 @@
 
     setcookie($cookie_name, $cookie_value);
 
-    $cookie_value = 'nur';
+    // $cookie_value = 'nur';
 
-    setcookie($cookie_name, $cookie_value);
+    // setcookie($cookie_name, $cookie_value);
 
     echo $_COOKIE[$cookie_name];
 
-    setcookie("user", "", time() - 3600);
+    // setcookie("user", "", time() - 3600);
 
-    echo '</br>';
+    // echo '</br>';
 
-    var_dump($_COOKIE);
+    // var_dump($_COOKIE);
 
 ?>
