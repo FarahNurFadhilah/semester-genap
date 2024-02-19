@@ -48,8 +48,8 @@
 
 }
 
-    $db = new DB;
-    $db->pesan("berhasil");
+    // $db = new DB;
+    // $db->pesan("berhasil");
     //$db->runSql("INSERT INTO tblkategori VALUES ('','Seblak')");
     // $db->runSql("DELETE FROM tblkategori WHERE idkategori=22");
     //$row = $db->getAll("SELECT * FROM tblkategori");
