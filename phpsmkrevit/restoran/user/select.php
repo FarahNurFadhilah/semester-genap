@@ -20,8 +20,8 @@
     $no=1+$mulai;
 
 ?>
-<div class="float-start">
-    <a class="btn btn-primary" href="?f=user&m=insert" role="button">TAMBAH DATA</a>
+<div class="float-start ">
+    <a class="btn btn-primary " href="?f=user&m=insert" role="button">TAMBAH DATA</a>
 </div>
 
 
