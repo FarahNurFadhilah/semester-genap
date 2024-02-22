@@ -25,15 +25,31 @@
 <body>
     <div class="container">
        <div class="row">
-        <div class="col-md-3">
-            <h2><a href="index.php">RESTORAN NUSANTARA</a></h2>
+        <div class="col-md-3 mt-4">
+            <h2><a href="index.php">RESTORAN NSNTR</a></h2>
         </div>
 
         <div class= "col-md-9">
-            <div class="float-end mt-4 ">logout</div>
-            <div class="float-end mt-4 me-4 ">login</div>
-            <div class="float-end mt-4 me-4">Pelanggan</div>
-            <div class="float-end mt-4 me-4">Daftar</div>
+
+            <?php 
+            
+                if (isset($_SESSION['pelanggan'])) {
+                   echo '
+                   <div class="float-end mt-4 ">logout</div>
+                   <div class="float-end mt-4 me-4">Pelanggan</div>
+                   ';
+                }else{
+                    echo '
+                    <div class="float-end mt-4 me-4 ">login</div>
+                    <div class="float-end mt-4 me-4"><a href="?f=home&m=daftar">Daftar</a></div>
+                    ';
+                }
+            
+            
+            ?>
+            
+           
+            
            
         </div>
        </div>
