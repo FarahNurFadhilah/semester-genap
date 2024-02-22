@@ -36,7 +36,7 @@
 
         <div>
 
-            <input type="submit" name="login" value="LOGIN" class="btn btn-primary mt-4">
+            <input type="submit" name="login" value="login" class="btn btn-primary mt-4">
 
         </div>
             </form>
@@ -53,22 +53,43 @@
        $email = $_POST['email'];
        $password= $_POST['password'];
 
-       $sql = "SELECT * FROM tbluser WHERE email='$email' AND '$password' ";
+       $sql = "SELECT * FROM tbluser WHERE email='$email' AND password='$password' ";
 
        $count = $db->rowCount($sql);
 
        if ($count ==0) {
-            echo "<h3>USER atau PASSWORD TIDAK VALID</h3>";
+            echo "<center><h3>USER atau PASSWORD TIDAK VALID</h3></center>";
        }else{
-            $sql = "SELECT * FROM tbluser WHERE email='$email' AND '$password' ";
+            $sql = "SELECT * FROM tbluser WHERE email='$email' AND password='$password' ";
             $row = $db->getItem($sql);
 
             $_SESSION['user']=$row['email'];
             $_SESSION['level']=$row['level'];
+                $_SESSION['iduser']=$row['iduser'];
 
             header("location:index.php");
        }
     }
 
+    // if (isset($_POST['login'])) {
+    //     $email = $_POST['email'];
+    //     $password= $_POST['password'];
+ 
+    //     $sql = "SELECT * FROM tbluser WHERE email='$email' AND password='$password' ";
+ 
+    //     $count = $db->rowCount($sql);
+ 
+    //     if ($count ==0) {
+    //          echo "<h3>USER atau PASSWORD TIDAK VALID</h3>";
+    //     }else{
+    //          $sql = "SELECT * FROM tbluser WHERE email='$email' AND password='$password' ";
+    //          $row = $db->getItem($sql);
+ 
+    //          $_SESSION['user']=$row['email'];
+    //          $_SESSION['level']=$row['level'];
+ 
+    //          header("location:index.php");
+    //     }
+    //  }
 
 ?>
