@@ -28,8 +28,8 @@
 <body>
     <div class="container">
        <div class="row">
-        <div class="col-md-3 mt-4">
-            <h2><a href="index.php">RESTORAN NSNTR</a></h2>
+        <div class="col-md-5 mt-4">
+            <h2><a href="index.php">RESTORAN NUSANTARA</a></h2>
         </div>
 
         <div class= "col-md-9">
