@@ -9,7 +9,10 @@
 
     $row = $db->getAll($sql);
 
-    
+    if (isset($_GET['log'])) {
+      session_destroy();
+      header("location:index.php");
+    }
    
 
 
@@ -35,12 +38,12 @@
             
                 if (isset($_SESSION['pelanggan'])) {
                    echo '
-                   <div class="float-end mt-4 ">logout</div>
-                   <div class="float-end mt-4 me-4">Pelanggan</div>
+                   <div class="float-end mt-4 "><a href="?log=logout">logout</a></div>
+                   <div class="float-end mt-4 me-4">Pelanggan : '.$_SESSION['pelanggan'].'</div>
                    ';
                 }else{
                     echo '
-                    <div class="float-end mt-4 me-4 ">login</div>
+                    <div class="float-end mt-4 me-4 "><a href="?f=home&m=login">login</a></div>
                     <div class="float-end mt-4 me-4"><a href="?f=home&m=daftar">Daftar</a></div>
                     ';
                 }
