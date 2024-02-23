@@ -16,6 +16,7 @@
 
     function cart(){
         global $db;
+        $cart = 0;
         foreach ($_SESSION as $key => $value) {
            if ($key<>"pelanggan" && $key<>"idpelanggan") {
             $id =substr($key,1);
@@ -23,14 +24,15 @@
             $row = $db->getAll($sql);
 
             foreach ($row as $r) {
-                echo 'data';
+                $cart++;
             }
 
            
            }
         }
+        return $cart;
     }
-   cart();
+   
 
 
 ?>
@@ -57,7 +59,8 @@
                    echo '
                    <div class="float-end mt-4 "><a href="?log=logout">logout</a></div>
                    <div class="float-end mt-4 me-4">Pelanggan : '.$_SESSION['pelanggan']. '</a></div>
-                   <div class="float-end mt-4 me-4">Cart : ( <a href="?f=home&m=beli">'.'0'.'</a>)</div>
+                   <div class="float-end mt-4 me-4">Cart : ( <a href="?f=home&m=beli">'.cart().'</a>)</div>
+                   <div class="float-end mt-4 me-4"><a href="?f=home&m=histori">Histori</a></div>
                    ';
                 }else{
                     echo '
