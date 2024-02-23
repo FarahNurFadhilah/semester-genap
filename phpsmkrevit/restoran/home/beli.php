@@ -91,6 +91,19 @@
         echo '</table>';
     }
 
+    function info(){
+        echo "<h4>Terimaksih Sudah Belanja<h4>";
+    }
+
+?>
+<?php 
+
+    if (!empty($total)) {
+
 ?>
 
 <a class="btn btn-primary" href="?f=home&m=checkout&total=<?php echo $total?>" role="button">Checkout</a>
+
+<?php 
+     }
+?>
