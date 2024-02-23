@@ -4,7 +4,7 @@
     if (isset($_GET['hapus'])) {
     $id = $_GET['hapus'];
     unset($_SESSION['_'.$id]);
-
+        header("location:f=home&m=beli");
    
     }
 
@@ -91,9 +91,7 @@
         echo '</table>';
     }
 
-    function info(){
-        echo "<h4>Terimaksih Sudah Belanja<h4>";
-    }
+    
 
 ?>
 <?php 

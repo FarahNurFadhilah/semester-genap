@@ -13,7 +13,24 @@
       session_destroy();
       header("location:index.php");
     }
-   
+
+    function cart(){
+        global $db;
+        foreach ($_SESSION as $key => $value) {
+           if ($key<>"pelanggan" && $key<>"idpelanggan") {
+            $id =substr($key,1);
+            $sql = "SELECT * FROM tblmenu WHERE idmenu=$id";
+            $row = $db->getAll($sql);
+
+            foreach ($row as $r) {
+                echo 'data';
+            }
+
+           
+           }
+        }
+    }
+   cart();
 
 
 ?>
@@ -39,7 +56,8 @@
                 if (isset($_SESSION['pelanggan'])) {
                    echo '
                    <div class="float-end mt-4 "><a href="?log=logout">logout</a></div>
-                   <div class="float-end mt-4 me-4">Pelanggan : <a href="?f=home&m=beli">'.$_SESSION['pelanggan'].'</a></div>
+                   <div class="float-end mt-4 me-4">Pelanggan : '.$_SESSION['pelanggan']. '</a></div>
+                   <div class="float-end mt-4 me-4">Cart : ( <a href="?f=home&m=beli">'.'0'.'</a>)</div>
                    ';
                 }else{
                     echo '
